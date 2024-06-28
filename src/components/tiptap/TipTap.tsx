@@ -35,6 +35,7 @@ const MenuBar = ({ currentProject, projectsUrls }: { currentProject: string | un
   
   return (
     <>
+    {currentProject && <p className='flex flex-col'>Your website is available at <span className='text-primary hover:underline'>{`https://${window.location.hostname}/${currentProject}`}</span></p>}
       <div className="flex w-full flex-row gap-5 justify-center flex-wrap">
         {currentProject ? (
           <>
@@ -50,7 +51,7 @@ const MenuBar = ({ currentProject, projectsUrls }: { currentProject: string | un
           </>
         )}
       </div>
-      <div className="control-group flex flex-col gap-3">
+      <div className="control-group flex flex-col gap-3 mb-10">
         <ButtonGroup className='w-full flex-wrap'>
           <Button
             color={"secondary"}
@@ -272,11 +273,11 @@ const extensions = [
   StarterKit.configure({
     bulletList: {
       keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+      keepAttributes: false,
     },
     orderedList: {
       keepMarks: true,
-      keepAttributes: false, // TODO : Making this as `false` becase marks are not preserved when I try to preserve attrs, awaiting a bit of help
+      keepAttributes: false,
     },
   }),
   Image,
