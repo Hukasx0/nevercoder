@@ -24,7 +24,7 @@ export default function ProjectsSelect({ currentProject, projectsList }: Project
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button>{currentProject || "Untitled project"}</Button>
+        <Button>{currentProject ?? "Untitled project"}</Button>
       </DropdownTrigger>
       <DropdownMenu>
         {projectsUrls.map((project) => (
