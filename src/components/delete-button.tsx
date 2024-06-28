@@ -21,7 +21,7 @@ export default function DeleteButton({ url }: { url: string }) {
     return (
         <>
       <Button onPress={onOpen} color={"danger"}>Delete</Button>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement={"bottom-center"}>
         <ModalContent>
           {(onClose) => (
             <>

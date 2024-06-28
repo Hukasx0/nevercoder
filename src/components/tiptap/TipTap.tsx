@@ -146,6 +146,8 @@ const MenuBar = ({ currentProject, projectsUrls }: { currentProject: string | un
           >
             H3
           </Button>
+          </ButtonGroup>
+          <ButtonGroup>
           <Button
             color={"secondary"}
             onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()}
@@ -190,6 +192,8 @@ const MenuBar = ({ currentProject, projectsUrls }: { currentProject: string | un
           >
             Code block
           </Button>
+          </ButtonGroup>
+          <ButtonGroup>
           <Button
             color={"secondary"}
             onClick={() => editor.chain().focus().toggleBlockquote().run()}
@@ -202,6 +206,32 @@ const MenuBar = ({ currentProject, projectsUrls }: { currentProject: string | un
           </Button>
           <Button color={"secondary"} onClick={() => editor.chain().focus().setHardBreak().run()}>
             Hard break
+          </Button>
+        </ButtonGroup>
+        <ButtonGroup className='w-full flex-wrap'>
+          <Button
+            color={"secondary"}
+            onClick={() => {
+              const url = window.prompt('Image URL');
+              if (url) {
+                editor.chain().focus().setImage({ src: url }).run()
+              }
+            }}>
+            Add image
+          </Button>
+          <Button
+            color={"secondary"}
+            onClick={() => {
+              const url = window.prompt('Video URL');
+              if (url) {
+                editor.commands.setYoutubeVideo({
+                  src: url,
+                  width: 640,
+                  height: 480,
+                })
+              }
+            }}>
+            Add YouTube video
           </Button>
         </ButtonGroup>
         <ButtonGroup className='w-full flex-wrap'>
@@ -230,32 +260,6 @@ const MenuBar = ({ currentProject, projectsUrls }: { currentProject: string | un
             }
           >
             Redo
-          </Button>
-        </ButtonGroup>
-        <ButtonGroup className='w-full flex-wrap'>
-          <Button
-            color={"secondary"}
-            onClick={() => {
-              const url = window.prompt('Image URL');
-              if (url) {
-                editor.chain().focus().setImage({ src: url }).run()
-              }
-            }}>
-            Add image
-          </Button>
-          <Button
-            color={"secondary"}
-            onClick={() => {
-              const url = window.prompt('Video URL');
-              if (url) {
-                editor.commands.setYoutubeVideo({
-                  src: url,
-                  width: 640,
-                  height: 480,
-                })
-              }
-            }}>
-            Add YouTube video
           </Button>
         </ButtonGroup>
       </div>

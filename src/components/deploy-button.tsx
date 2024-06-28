@@ -51,7 +51,7 @@ export default function DeployButton({ editor }: { editor: Editor }) {
       <Modal 
         isOpen={isOpen} 
         onOpenChange={onOpenChange}
-        placement="top-center"
+        placement="bottom-center"
       >
         <ModalContent>
           {(onClose) => (
