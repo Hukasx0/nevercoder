@@ -227,8 +227,8 @@ const MenuBar = ({ currentProject, projectsUrls }: { currentProject: string | un
               if (url) {
                 editor.commands.setYoutubeVideo({
                   src: url,
-                  width: 640,
-                  height: 480,
+                  width: 320,
+                  height: 180,
                 })
               }
             }}>
