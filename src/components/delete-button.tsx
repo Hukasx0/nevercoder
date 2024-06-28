@@ -27,7 +27,7 @@ export default function DeleteButton({ url }: { url: string }) {
             <>
               <ModalHeader className="flex flex-col gap-1">Delete</ModalHeader>
               <ModalBody>
-                <p>Are you sure you want to delete this? (this cannot be undone)</p>
+                <p>Are you sure you want to delete this website? (this cannot be undone)</p>
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>

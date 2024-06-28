@@ -57,7 +57,7 @@ export default function DeployButton({ editor }: { editor: Editor }) {
           {(onClose) => (
             <>
             <form onSubmit={onSubmit}>
-              <ModalHeader className="flex flex-col gap-1">Log in</ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">Deploy website</ModalHeader>
               <ModalBody>
                   <Input
                     autoFocus

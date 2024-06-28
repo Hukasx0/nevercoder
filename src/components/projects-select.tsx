@@ -10,14 +10,27 @@ export type ProjectsSelectProps = {
 
 export default function ProjectsSelect({ currentProject, projectsList }: ProjectsSelectProps) {
 
+  const projectsUrls = projectsList.map(project => ({
+    name: project,
+    url: project,
+  }));
+  if (currentProject) {
+    projectsUrls.unshift({
+      name: "new +",
+      url: "/",
+    });
+  }
+
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button>{currentProject ?? "Untitled project"}</Button>
+        <Button>{currentProject || "Untitled project"}</Button>
       </DropdownTrigger>
       <DropdownMenu>
-        {projectsList.map((project) => (
-          <DropdownItem onClick={() => window.location.href = project} key={project}>{project}</DropdownItem>
+        {projectsUrls.map((project) => (
+          <DropdownItem key={project.url} onClick={() => window.location.href = project.url}>
+            {project.name}
+          </DropdownItem>
         ))}
       </DropdownMenu>
     </Dropdown>
